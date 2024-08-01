@@ -43,7 +43,7 @@ tokenized_val_dataset = val_dataset.map(tokenize_prompt)
 
 
 # Init an eval tokenizer that doesn't add padding or eos token
-eval_prompt = "What is APS105? "
+eval_prompt = "What is APS105?  "
 eval_tokenizer = AutoTokenizer.from_pretrained(model_path,add_bos_token=True)
 model_input = eval_tokenizer(eval_prompt, return_tensors="pt").to("cuda")
 model.eval()
