@@ -82,3 +82,14 @@ def unroll(cache:torch.Tensor,seq_len:int):
 <p align="center">
   <img src="block_causal_mask.png" alt="Sublime's custom image"/>
 </p>
+
+## RoPE
+- Link to really good article explaining this: https://medium.com/@ngiengkianyew/understanding-rotary-positional-encoding-40635a4d078e
+- RoPE is a positional encoding method, it **combines** absolute and relative positional encoding methods
+- Why is it bad to use absolute positional encoding
+    -  absolute positional encoding does not capture the positional information for the entire sequence
+    - there is no relationship btw positions
+    - relative distances are inconsistent
+    - E.g. `[0.1,0.01,0.5]` leads to `dist_btw_0_and_2` $>>>$ `dist_btw_0_and_1`, which doesnt make sense cuz token at pos 2 shd be further
+- Why is it bad to use relative positional encoding
+    - 
